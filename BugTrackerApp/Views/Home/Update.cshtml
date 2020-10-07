@@ -1,0 +1,27 @@
+﻿
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Description</th>
+            <th>Created By</th>
+            <th>Assigned To</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var bug in Model)
+        {
+            <tr>
+                <td>@bug.Id</td>
+                <td>@bug.BugName</td>
+                <td>@bug.BugDescription</td>
+                <td>@bug.BugCreatedBy</td>
+                <td>@bug.BugAssignedTo</td>
+                <td>@bug.Date</td>
+            </tr>
+        }
+    </tbody>
+</table>
