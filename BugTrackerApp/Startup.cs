@@ -30,7 +30,12 @@ namespace BugTrackerApp
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<TrackerDbContext>();
 
-           
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequiredLength = 7;
+                options.Password.RequireNonAlphanumeric = false;
+            });
+
             services.AddMvc(options => options.EnableEndpointRouting = false);
             services.AddScoped<IBugRepo, SqlBugRepo>();
         }
